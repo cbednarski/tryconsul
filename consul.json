@@ -1,0 +1,10 @@
+{
+    "bootstrap_expect": 3,
+    "client_addr": "0.0.0.0",
+    "data_dir": "/var/lib/consul",
+    "datacenter": "vagrant",
+    "enable_syslog": true,
+    "log_level": "INFO",
+    "server": true,
+    "ui_dir": "/opt/consul-ui"
+}
