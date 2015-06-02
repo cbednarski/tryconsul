@@ -1,10 +1,10 @@
 deps:
-	wget -q -nc https://dl.bintray.com/mitchellh/consul/0.5.0_linux_amd64.zip
-	wget -q -nc https://dl.bintray.com/mitchellh/consul/0.5.0_web_ui.zip
+	wget -q -nc https://dl.bintray.com/mitchellh/consul/0.5.2_linux_amd64.zip
+	wget -q -nc https://dl.bintray.com/mitchellh/consul/0.5.2_web_ui.zip
 	apt-get update -qq
 	apt-get install -y unzip
-	unzip -o 0.5.0_linux_amd64.zip
-	unzip -o 0.5.0_web_ui.zip
+	unzip -o 0.5.2_linux_amd64.zip
+	unzip -o 0.5.2_web_ui.zip
 
 install:
 	stop consul || true
