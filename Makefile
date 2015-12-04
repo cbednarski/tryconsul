@@ -5,7 +5,7 @@ deps:
 	apt-get update -qq
 	apt-get install -y unzip
 	unzip -o consul_0.6.0_linux_amd64.zip
-	unzip -o consul_0.6.0_web_ui.zip
+	unzip -o consul_0.6.0_web_ui.zip -d dist
 
 
 install:
