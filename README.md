@@ -8,6 +8,8 @@
 
 This project is part of [TryDB.io](https://trydb.io).
 
+**Now featuring Consul 0.6.0!**
+
 ## Getting Started
 
 Before you start, you'll need [Vagrant](https://www.vagrantup.com/) installed and git installed. TryConsul will work with VirtualBox or VMware (with the [VMware plugin for Vagrant](http://www.vagrantup.com/vmware)). Once this is setup, simply:
@@ -26,9 +28,9 @@ Consul will start automatically when you boot the instances, and should form a c
     > Now inside VM
     $ consul members
     Node     Address             Status  Type    Build  Protocol
-    consul1  10.7.0.5:8301  alive   server  0.5.0  2
-    consul2  10.7.0.6:8301  alive   server  0.5.0  2
-    consul3  10.7.0.7:8301  alive   server  0.5.0  2
+    consul1  10.7.0.5:8301  alive   server  0.6.0  2
+    consul2  10.7.0.6:8301  alive   server  0.6.0  2
+    consul3  10.7.0.7:8301  alive   server  0.6.0  2
 
 You can replace `consul1` with `consul2` or `consul3` to login to those respective VMs.
 
