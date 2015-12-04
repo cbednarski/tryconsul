@@ -1,4 +1,7 @@
 /.vagrant
-*.zip
 /consul
 /dist
+/static
+*.zip
+hostess_linux_amd64
+index.html

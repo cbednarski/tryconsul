@@ -8,6 +8,9 @@
 
 This project is part of [TryDB.io](https://trydb.io).
 
+    ifconfig eth1 | grep "inet addr" | awk 'BEGIN { FS = "[ :]+" }{print $4}' > consul1.ip
+    's/ADDR/'$(<consul1.ip)'/g' /vagrant/consul.json
+
 ## Getting Started
 
 Before you start, you'll need [Vagrant](https://www.vagrantup.com/) installed and git installed. TryConsul will work with VirtualBox or VMware (with the [VMware plugin for Vagrant](http://www.vagrantup.com/vmware)). Once this is setup, simply:

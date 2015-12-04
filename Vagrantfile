@@ -5,6 +5,7 @@ Vagrant.configure(2) do |config|
     consul1.vm.provision "shell", inline: "hostnamectl set-hostname consul1"
     consul1.vm.provision "shell", inline: "cd /vagrant/ && make deps"
     consul1.vm.provision "shell", inline: "cd /vagrant/ && make install"
+    consul1.vm.provision "shell", inline: "hostess add consul1 $(</tmp/self.ip)"
   end
 
   config.vm.define "consul2" do |consul2|
@@ -12,6 +13,7 @@ Vagrant.configure(2) do |config|
     consul2.vm.network "private_network", ip: "10.7.0.6"
     consul2.vm.provision "shell", inline: "hostnamectl set-hostname consul2"
     consul2.vm.provision "shell", inline: "cd /vagrant/ && make install"
+    consul2.vm.provision "shell", inline: "hostess add consul2 $(</tmp/self.ip)"
     consul2.vm.provision "shell", inline: "consul join 10.7.0.5"
   end
 
@@ -20,6 +22,7 @@ Vagrant.configure(2) do |config|
     consul3.vm.network "private_network", ip: "10.7.0.7"
     consul3.vm.provision "shell", inline: "hostnamectl set-hostname consul3"
     consul3.vm.provision "shell", inline: "cd /vagrant/ && make install"
+    consul3.vm.provision "shell", inline: "hostess add consul3 $(</tmp/self.ip)"
     consul3.vm.provision "shell", inline: "consul join 10.7.0.5"
   end
 end
