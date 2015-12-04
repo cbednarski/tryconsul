@@ -8,9 +8,6 @@
 
 This project is part of [TryDB.io](https://trydb.io).
 
-    ifconfig eth1 | grep "inet addr" | awk 'BEGIN { FS = "[ :]+" }{print $4}' > consul1.ip
-    's/ADDR/'$(<consul1.ip)'/g' /vagrant/consul.json
-
 ## Getting Started
 
 Before you start, you'll need [Vagrant](https://www.vagrantup.com/) installed and git installed. TryConsul will work with VirtualBox or VMware (with the [VMware plugin for Vagrant](http://www.vagrantup.com/vmware)). Once this is setup, simply:
@@ -29,9 +26,9 @@ Consul will start automatically when you boot the instances, and should form a c
     > Now inside VM
     $ consul members
     Node     Address             Status  Type    Build  Protocol
-    consul1  172.16.59.198:8301  alive   server  0.5.0  2
-    consul2  172.16.59.199:8301  alive   server  0.5.0  2
-    consul3  172.16.59.200:8301  alive   server  0.5.0  2
+    consul1  10.7.0.5:8301  alive   server  0.5.0  2
+    consul2  10.7.0.6:8301  alive   server  0.5.0  2
+    consul3  10.7.0.7:8301  alive   server  0.5.0  2
 
 You can replace `consul1` with `consul2` or `consul3` to login to those respective VMs.
 
@@ -41,14 +38,9 @@ Try some other commands:
 
 ## Consul Web UI
 
-You can also view the consul web UI by hitting one of the nodes on port `:8500`. You can see your IPs via `consul members` or using `vagrant ssh-config` (you IPs will be different).
+You can also view the consul web UI by hitting one of the nodes on port `:8500`. You can see your IPs via `consul members` (your IPs may be different).
 
-    $ vagrant ssh-config | grep HostName
-    HostName 172.16.59.198
-    HostName 172.16.59.199
-    HostName 172.16.59.200
-
-Select any of your IPs and open it in your browser: http://172.16.59.198:8500/ui
+Select any of your IPs and open it in your browser: <http://10.7.0.5:8500/ui>
 
 ## Next Steps
 
@@ -81,9 +73,5 @@ If you run into problems, you can see consul's logs via:
     $ consul monitor
     or
     $ tail /var/log/syslog
-
-If you edit the consul configuration file and have trouble running `vagrant provision`, try:
-
-    start consul
-
-And watch the output.
+    or
+    $ sudo tail -f /var/log/upstart/consul.log
