@@ -8,13 +8,13 @@
 
 This project is part of [TryDB.io](https://trydb.io).
 
-**Now featuring Consul 0.6.0!**
+[**Now featuring Consul 0.6.0!**](https://hashicorp.com/blog/consul-0-6.html)
 
 ## Getting Started
 
 Before you start, you'll need [Vagrant](https://www.vagrantup.com/) installed and git installed. TryConsul will work with VirtualBox or VMware (with the [VMware plugin for Vagrant](http://www.vagrantup.com/vmware)). Once this is setup, simply:
 
-    $ git clone https://github.com/cbednarski/tryconsul
+    $ git clone https://github.com/trydb/tryconsul
     $ cd tryconsul
     $ vagrant up
 
